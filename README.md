@@ -35,3 +35,9 @@ Swagger: http://127.0.0.1:5001/api/docs
 
 ## Contributor: alwints
 See docs/contributors/alwints.md
+
+## Quickstart (Bhagya)
+1. Clone
+2. Install deps
+3. Configure DB
+4. Run
