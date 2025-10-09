@@ -1,3 +1,5 @@
 
 # extras (alwints)
 .env
+!backend/docs/**
+backend/backend_backup/
