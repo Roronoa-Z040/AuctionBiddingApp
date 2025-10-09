@@ -1,0 +1,255 @@
+{
+  "info": {
+    "name": "Online Auction Final",
+    "_postman_id": "auction-1759312488",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Auth - Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\":\"Tester\",\"email\":\"tester@example.com\",\"password\":\"secret123\"}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5001/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Auth - Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"tester@example.com\",\"password\":\"secret123\"}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5001/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Auctions - List",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://127.0.0.1:5001/api/auctions",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "auctions"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Auctions - Create",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\":\"Camera\",\"description\":\"Mint\",\"startingPrice\":50,\"endDate\":\"2030-01-01T00:00:00.000Z\"}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5001/api/auctions",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "auctions"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Auctions - Get by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://127.0.0.1:5001/api/auctions/{{auctionId}}",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "auctions",
+            "{{auctionId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Bids - Place",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"amount\":99}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:5001/api/auctions/{{auctionId}}/bids",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "auctions",
+            "{{auctionId}}",
+            "bids"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Users - Me",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:5001/api/users/me",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "users",
+            "me"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Users - Participation",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}"
+          }
+        ],
+        "url": {
+          "raw": "http://127.0.0.1:5001/api/users/me/participation",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "5001",
+          "path": [
+            "api",
+            "users",
+            "me",
+            "participation"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "auctionId",
+      "value": ""
+    }
+  ]
+}
