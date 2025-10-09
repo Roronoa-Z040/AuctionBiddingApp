@@ -32,3 +32,6 @@ npm start
 Front-end: http://localhost:3000  
 Back-end: http://127.0.0.1:5001/api/health  
 Swagger: http://127.0.0.1:5001/api/docs
+
+## Contributor: alwints
+See docs/contributors/alwints.md
