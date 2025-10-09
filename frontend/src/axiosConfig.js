@@ -1,5 +1,7 @@
-
 import axios from 'axios';
-const baseURL = process.env.REACT_APP_API_URL || 'http://13.211.211.43:5001';
+
+// For production via Nginx proxy
+const baseURL = process.env.REACT_APP_API_URL || '/api';
+
 const instance = axios.create({ baseURL });
 export default instance;
