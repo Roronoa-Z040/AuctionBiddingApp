@@ -16,9 +16,16 @@ app.get('/api/health', (_req, res) => {
 
 const server = http.createServer(app);
 
-// Allow socket.io from your dev origins; add your public site/domain if needed
+// ✅ Allow socket.io from local dev + your public site
 const io = new Server(server, {
-  cors: { origin: ['http://localhost:3000', 'http://127.0.0.1:3000'] }
+  cors: {
+    origin: [
+      'http://localhost:3000',
+      'http://127.0.0.1:3000',
+      'http://13.211.211.43'
+    ],
+    methods: ['GET', 'POST'],
+  },
 });
 app.set('io', io);
 io.on('connection', (s) => {
